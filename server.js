@@ -11,22 +11,12 @@ const image = require("./controllers/image");
 const db = knex({
   client: "pg",
   connection: {
-    host: "ep-holy-butterfly-25858046-pooler.us-east-1.postgres.vercel-storage.com",
-    user: "default",
-    password: "ReAU8t9aBILc",
-    database: "verceldb",
+    host: "localhost",
+    user: "postgres",
+    password: "Ekampreet_2552",
+    database: "smart-brain",
   },
 });
-
-// const db = knex({
-//   client: "pg",
-//   connection: {
-//     host: "localhost",
-//     user: "postgres",
-//     password: "Ekampreet_2552",
-//     database: "smart-brain",
-//   },
-// });
 
 const app = express();
 
@@ -46,5 +36,3 @@ app.post("/imageurl", image.handleAPICall());
 app.listen(3000, () => {
   console.log("Listening at port 3000.");
 });
-
-module.exports = app;
